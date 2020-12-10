@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Test_3" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=FNAJIB;Initial Catalog=Test_3;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Test_3ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Adm" Member="Adms">
+    <Type Name="Adm">
+      <Column Name="A_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[Room No.]" Member="Room_No_" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Patient_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="E_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Adm_Date_Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Adm_satats" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Employee_Adm" Member="Employee" ThisKey="E_Id" OtherKey="E_ID" Type="Employee" IsForeignKey="true" />
+      <Association Name="Patient_Adm" Member="Patient" ThisKey="Patient_Id" OtherKey="ID_Patient" Type="Patient" IsForeignKey="true" />
+      <Association Name="Room_Adm" Member="Room" ThisKey="Room_No_" OtherKey="Room_No_" Type="Room" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CBC_Table" Member="CBC_Tables">
+    <Type Name="CBC_Table">
+      <Column Name="[No.order]" Member="No_order" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="WBS" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Neutro" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Lympho" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Mono" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Eosino" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Baso" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Bands" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="RBC" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Hemoglobin" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Hematocrit" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MCV" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MCHC" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="RDW" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Platelets" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Bleeding Time]" Member="Bleeding_Time" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Coagulation Time]" Member="Coagulation_Time" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Reticulocyte  count]" Member="Reticulocyte__count" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[E.S.R]" Member="E_S_R" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Blood Group]" Member="Blood_Group" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="[Blood Film Inspection]" Member="Blood_Film_Inspection" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="MCH" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="crea" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="urea" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="urid" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="Order_CBC_Table" Member="Order" ThisKey="No_order" OtherKey="OrderNO" Type="Order" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Department_Store" Member="Department_Stores">
+    <Type Name="Department_Store">
+      <Column Name="Store_ID" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Store_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Department_Store_Item_Store" Member="Item_Stores" ThisKey="Store_ID" OtherKey="Store_ID" Type="Item_Store" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Employee" Member="Employees">
+    <Type Name="Employee">
+      <Column Name="E_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="E_NAME" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="E_FATHER_NAME" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="E_SARNAME" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[E_MOTHER_NAME[&amp;]]TITLE]" Member="E_MOTHER_NAME___TITLE" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="E_PLACE_OF_BIRTH" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="E_DATE_OF_BIRTH" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="GENDER" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="AGE" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ADDESS" Type="System.String" DbType="NVarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="PHONE" Type="System.String" DbType="NVarChar(18) NOT NULL" CanBeNull="false" />
+      <Column Name="MOBILE_PHONE" Type="System.String" DbType="NVarChar(18) NOT NULL" CanBeNull="false" />
+      <Column Name="MARITAL_SATUS" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SECRETARIAT" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="[Constraint]" Member="Constraint" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DATE_OF_THE_GRANT_ID_CARD" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="NOTIONAL_NO" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="JOIN_DATE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="Employee_Adm" Member="Adms" ThisKey="E_ID" OtherKey="E_Id" Type="Adm" />
+      <Association Name="Employee_UserTable" Member="UserTable" ThisKey="E_ID" OtherKey="EM_ID" Type="UserTable" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.form_drug" Member="form_drugs">
+    <Type Name="form_drug">
+      <Column Name="F_ID" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="F_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="form_drug_Product" Member="Products" ThisKey="F_ID" OtherKey="id_form" Type="Product" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Item_Store" Member="Item_Stores">
+    <Type Name="Item_Store">
+      <Column Name="itemID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="betch_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Store_ID" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Quntity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="using" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="complete" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Namepro" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Department_Store_Item_Store" Member="Department_Store" ThisKey="Store_ID" OtherKey="Store_ID" Type="Department_Store" IsForeignKey="true" />
+      <Association Name="Product_Detail_Item_Store" Member="Product_Detail" ThisKey="betch_ID" OtherKey="Batch__Number" Type="Product_Detail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Log_Room" Member="Log_Rooms">
+    <Type Name="Log_Room">
+      <Column Name="Patient_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Room_NO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ge_LOG" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Tempreture_Patient" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[The patient's pulse]" Member="The_patient_s_pulse" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Pressure patient]" Member="Pressure_patient" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Prescription" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Log_out_NO" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="logdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Patient_Log_Room" Member="Patient" ThisKey="Patient_ID" OtherKey="ID_Patient" Type="Patient" IsForeignKey="true" />
+      <Association Name="Room_Log_Room" Member="Room" ThisKey="Room_NO" OtherKey="Room_No_" Type="Room" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Order]" Member="Orders">
+    <Type Name="Order">
+      <Column Name="OrderNO" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="P_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="E_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Rq_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Test_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="O_Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Detail" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Test_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pay_com" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Order_CBC_Table" Member="CBC_Table" ThisKey="OrderNO" OtherKey="No_order" Type="CBC_Table" Cardinality="One" />
+      <Association Name="Patient_Order" Member="Patient" ThisKey="P_ID" OtherKey="ID_Patient" Type="Patient" IsForeignKey="true" />
+      <Association Name="Test_Name_Order" Member="Test_Name" ThisKey="Test_ID" OtherKey="ID_Test" Type="Test_Name" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Order_ph" Member="Order_phs">
+    <Type Name="Order_ph">
+      <Column Name="Order_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Product_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Store_ID" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Qunantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="E_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Patient_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Patient_Order_ph" Member="Patient" ThisKey="Patient_ID" OtherKey="ID_Patient" Type="Patient" IsForeignKey="true" />
+      <Association Name="Product_Order_ph" Member="Product" ThisKey="Product_ID" OtherKey="Product_ID" Type="Product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Patient" Member="Patients">
+    <Type Name="Patient">
+      <Column Name="ID_Patient" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="P_NAME" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="P_FATHER_NAME" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="P_SARNAME" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[P_MOTHER_NAME[&amp;]]TITLE]" Member="P_MOTHER_NAME___TITLE" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="P_PLACE_OF_BIRTH" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[P_DATE_OF_BIRTH,]" Member="P_DATE_OF_BIRTH_" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AGE" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ADDESS" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="PHONE" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MOBILE_PHONE" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MARITAL_SATUS" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="SECRETARIAT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Constraint]" Member="Constraint" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DATE_OF_THE_GRANT_ID_CARD" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NOTIONAL_NO" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="GENDER" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Blood_Group" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="p_status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Patient_Adm" Member="Adms" ThisKey="ID_Patient" OtherKey="Patient_Id" Type="Adm" />
+      <Association Name="Patient_Log_Room" Member="Log_Rooms" ThisKey="ID_Patient" OtherKey="Patient_ID" Type="Log_Room" />
+      <Association Name="Patient_Order" Member="Orders" ThisKey="ID_Patient" OtherKey="P_ID" Type="Order" />
+      <Association Name="Patient_Order_ph" Member="Order_phs" ThisKey="ID_Patient" OtherKey="Patient_ID" Type="Order_ph" />
+      <Association Name="Patient_Payment" Member="Payments" ThisKey="ID_Patient" OtherKey="patient_id" Type="Payment" />
+      <Association Name="Patient_Ser" Member="Sers" ThisKey="ID_Patient" OtherKey="Patient_ID" Type="Ser" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Payment" Member="Payments">
+    <Type Name="Payment">
+      <Column Name="pay_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="patient_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Room_Cost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Lab_Cost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ph_Cost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="Patient_Payment" Member="Patient" ThisKey="patient_id" OtherKey="ID_Patient" Type="Patient" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pharmacy_Vendors" Member="Pharmacy_Vendors">
+    <Type Name="Pharmacy_Vendor">
+      <Column Name="Vendor_ID" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Vendor_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="Pharmacy_Vendor_Product" Member="Products" ThisKey="Vendor_ID" OtherKey="Vendor_ID" Type="Product" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Product" Member="Products">
+    <Type Name="Product">
+      <Column Name="Product_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[Product_ Code]" Member="Product__Code" Type="System.String" DbType="VarChar(10)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="[Product_ Name]" Member="Product__Name" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Unit_Cost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="category_ID" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Vendor_ID" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="id_form" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Association Name="Product_Order_ph" Member="Order_phs" ThisKey="Product_ID" OtherKey="Product_ID" Type="Order_ph" />
+      <Association Name="Product_Product_Detail" Member="Product_Details" ThisKey="Product_ID" OtherKey="Product_ID" Type="Product_Detail" />
+      <Association Name="form_drug_Product" Member="form_drug" ThisKey="id_form" OtherKey="F_ID" Type="form_drug" IsForeignKey="true" />
+      <Association Name="Pharmacy_Vendor_Product" Member="Pharmacy_Vendor" ThisKey="Vendor_ID" OtherKey="Vendor_ID" Type="Pharmacy_Vendor" IsForeignKey="true" />
+      <Association Name="Product_Category_Product" Member="Product_Category" ThisKey="category_ID" OtherKey="cate_ID" Type="Product_Category" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Product_Categories" Member="Product_Categories">
+    <Type Name="Product_Category">
+      <Column Name="cate_ID" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Cate_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Product_Category_Product" Member="Products" ThisKey="cate_ID" OtherKey="category_ID" Type="Product" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Product_Detail" Member="Product_Details">
+    <Type Name="Product_Detail">
+      <Column Name="Product_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Batch_ Number]" Member="Batch__Number" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Product_start_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Product_end_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Qunttity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Using" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Betch_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Product_Detail_Item_Store" Member="Item_Stores" ThisKey="Batch__Number" OtherKey="betch_ID" Type="Item_Store" />
+      <Association Name="Product_Product_Detail" Member="Product" ThisKey="Product_ID" OtherKey="Product_ID" Type="Product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Room" Member="Rooms">
+    <Type Name="Room">
+      <Column Name="[Room No.]" Member="Room_No_" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Room_Type" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Room_Cost" Type="System.Decimal" DbType="SmallMoney NOT NULL" CanBeNull="false" />
+      <Column Name="[Length OF Stay]" Member="Length_OF_Stay" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Floor" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="[Bad No.]" Member="Bad_No_" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Room_Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Room_Adm" Member="Adms" ThisKey="Room_No_" OtherKey="Room_No_" Type="Adm" />
+      <Association Name="Room_Log_Room" Member="Log_Rooms" ThisKey="Room_No_" OtherKey="Room_NO" Type="Log_Room" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Test Names]" Member="Test_Names">
+    <Type Name="Test_Name">
+      <Column Name="ID_Test_Catego" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="ID_Test" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Test_Name" Member="Test_Name1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="No_Unit" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="Test_Name_Order" Member="Orders" ThisKey="ID_Test" OtherKey="Test_ID" Type="Order" />
+      <Association Name="Test_Name_Ser" Member="Sers" ThisKey="ID_Test" OtherKey="Test_ID" Type="Ser" />
+      <Association Name="Test_Category_Test_Name" Member="Test_Category" ThisKey="ID_Test_Catego" OtherKey="ID_Test_Catego" Type="Test_Category" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Test_Categories" Member="Test_Categories">
+    <Type Name="Test_Category">
+      <Column Name="ID_Test_Catego" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name_Of_Catego" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Test_Category_Test_Name" Member="Test_Names" ThisKey="ID_Test_Catego" OtherKey="ID_Test_Catego" Type="Test_Name" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserTable" Member="UserTables">
+    <Type Name="UserTable">
+      <Column Name="EM_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PassWord" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Role" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Employee_UserTable" Member="Employee" ThisKey="EM_ID" OtherKey="E_ID" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ser" Member="Sers">
+    <Type Name="Ser">
+      <Column Name="service_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Test_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Patient_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date_Service" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Weight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Height" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Hct" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Patient_Ser" Member="Patient" ThisKey="Patient_ID" OtherKey="ID_Patient" Type="Patient" IsForeignKey="true" />
+      <Association Name="Test_Name_Ser" Member="Test_Name" ThisKey="Test_ID" OtherKey="ID_Test" Type="Test_Name" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

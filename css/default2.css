@@ -1,0 +1,167 @@
+﻿* /*Set's border, padding and margin to 0 for all values*/ {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+body {
+	font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  color:black;
+  font-size:12px;
+ 
+  background:rgba(0,0,0,0.2);
+  background-image:url("../Img/97970470.jpg" );
+  background-size: cover;                      /*
+        background-image:url("Img/97970470.jpg"); <------ */
+    background-repeat: no-repeat ;
+  
+  
+}
+p {
+    padding: 7px 0 7px 0;
+    font-weight: 500;
+    font-size: 10pt;
+}
+a {
+    color: #656565;
+    text-decoration:none;
+}
+a:hover{
+    color: #abda0f;
+    text-decoration: none;
+}
+h1 {
+    font-weight:200;
+    color: #888888;
+    font-size:16pt;
+    background: transparent url(../imgfff/ ) no-repeat center left;
+    padding-left:33px;
+    margin:7px 5px 8px 8px;
+}
+h4 {
+    padding:1px;
+    color: #ACACAC;
+    font-size:9pt;
+    font-weight:100;
+    text-transform:uppercase;
+}
+form.register{
+    width:500px;
+    margin: 20px auto 0px auto;
+    height:300px;
+    background-color:#fff;
+    padding:5px;
+    -moz-border-radius:20px;
+    -webkit-border-radius:20px;
+}
+form p{
+    font-size: 8pt;
+    clear:both;
+    margin: 0;
+    color:gray;
+    padding:4px;
+}
+form.register fieldset.row1
+{
+    width:400px;
+    padding:2px;
+    float:left;
+    border-top:1px solid #F5F5F5;
+    margin-bottom:15px;
+}
+
+
+.sss {
+    width:140px;
+    float: left;
+    text-align: right;
+    margin-right: 6px;
+    margin-top:2px;
+
+}
+form.register fieldset.row2
+{
+    border-top:1px solid #F1F1F1;
+    border-right:1px solid #F1F1F1;
+    height:220px;
+    padding:5px;
+    float:left;
+}
+
+
+form.register legend
+{
+    color: #e9510e;
+    padding:2px;
+    margin-left: 14px;
+    font-weight:bold;
+    font-size: 14px;
+    font-weight:100;
+}
+
+form.register input{
+    width: 140px;
+    color: #505050;
+    float: left;
+    margin-right: 5px;
+}
+
+
+    
+    
+    form.register input[type=radio]
+{
+    float:left;
+    width:15px;
+}
+.gender{
+    margin-top:-1px;
+    margin-bottom:2px;
+    width:34px;
+    float:left;
+    text-align:left;
+    line-height:19px;
+}
+
+
+    
+    
+
+
+
+form.register input[type=text]
+{
+    border: 1px solid #E1E1E1;
+    height: 18px;
+}
+
+.button
+{
+    background: #e9510e url(../imgfff/overlay.png) repeat-x;
+    padding: 8px 10px 8px;
+    color: #fff;
+    text-decoration: none;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    cursor: pointer;
+    float:left;
+    font-size:18px;
+    margin:10px;
+}
+
+
+form.register select
+{
+    border: 1px solid #E1E1E1;
+    width: 130px;
+    float:left;
+    margin-bottom:3px;
+    color: #505050;
+    margin-right:5px;
+}
+
+input:focus, select:focus{
+    background-color:rgba(239, 79, 8, 0.41);
+}
